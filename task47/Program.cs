@@ -1,6 +1,7 @@
 ﻿// Задайте двумерный массив m x n заполненный случайными вещественными числами
-int[] parametersArray = new int[3];
+
 string[] partsMessage = {"строк ", "столбцов ", "знаков после запятой "};
+int[] parametersArray = new int[partsMessage.Length];
 for(int i = 0; i < parametersArray.Length; i++)
 {
     Console.Write("Введите количество " + partsMessage[i]);

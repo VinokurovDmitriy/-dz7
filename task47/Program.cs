@@ -1,6 +1,6 @@
 ﻿// Задайте двумерный массив m x n заполненный случайными вещественными числами
 
-string[] partsMessage = {"строк ", "столбцов ", "знаков после запятой "};
+string[] partsMessage = {"строк ", "столбцов ", "знаков после запятой (до 4) "};
 int[] parametersArray = new int[partsMessage.Length];
 for(int i = 0; i < parametersArray.Length; i++)
 {
@@ -30,7 +30,7 @@ void PrintArray(double[,] array)
     {
         for(int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write(array[i, j] + " ");
+            Console.Write($"{array[i, j], 10} ");
         }
         Console.WriteLine();
     }

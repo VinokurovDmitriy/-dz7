@@ -61,7 +61,7 @@ void PrintAverageArrayColumns(double[] columnsSum, int rowCount)
     {
         if (i == columnsSum.Length - 1)
             separator = ".";
-        double sumAverage = Math.Round(columnsSum[i] / rowCount, 3);
+        double sumAverage = Math.Round((float) columnsSum[i] / rowCount, 3);
         Console.Write(sumAverage + separator);
     }
     Console.WriteLine();

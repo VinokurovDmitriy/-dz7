@@ -33,7 +33,7 @@ void PrintArray(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write(arr[i, j] + " ");
+            Console.Write($"{arr[i, j], 3}");
         }
         Console.WriteLine();
     }
@@ -61,7 +61,7 @@ void PrintAverageArrayColumns(double[] columnsSum, int rowCount)
     {
         if (i == columnsSum.Length - 1)
             separator = ".";
-        double sumAverage = Math.Round((float) columnsSum[i] / rowCount, 3);
+        double sumAverage = Math.Round((float)columnsSum[i] / rowCount, 3);
         Console.Write(sumAverage + separator);
     }
     Console.WriteLine();

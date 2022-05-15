@@ -56,10 +56,13 @@ double[] GetSumColumnArray(int[,] arr)
 void PrintAverageArrayColumns(double[] columnsSum, int rowCount)
 {
     Console.Write("Среднее арифметическое каждого столбца: ");
+    string separator = "; ";
     for (int i = 0; i < columnsSum.Length; i++)
     {
+        if(i == columnsSum.Length - 1)
+        separator = ".";
         double sumAverage = Math.Round(columnsSum[i] / rowCount, 3);
-        Console.Write(sumAverage + "; ");
+        Console.Write(sumAverage + separator);
     }
     Console.WriteLine();
 }

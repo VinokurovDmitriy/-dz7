@@ -33,46 +33,33 @@ void PrintArray(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write($"{arr[i, j], 4}");
+            Console.Write($"{arr[i, j], 6}");
         }
         Console.WriteLine();
     }
 }
 
-double[] GetSumColumnArray(int[,] arr)
+void PrintAverageArrayColumns(int[,] array)
 {
-    double[] sumColumn = new double[arr.GetLength(1)];
     Console.WriteLine();
-    for (int i = 0; i < arr.GetLength(0); i++)
+    Console.WriteLine("Среднее арифметическое колонок: ");
+    for (int i = 0; i < array.GetLength(1); i++)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
+        int sumColumn = 0;
+        for (int j = 0; j < array.GetLength(0); j++)
         {
-            sumColumn[j] += arr[i, j];
+            sumColumn += array[j, i];
         }
+        double averageColumn = Math.Round((double) sumColumn / array.GetLength(0), 2);
+        Console.Write($"{averageColumn, 4}; ");
     }
-    return sumColumn;
+     Console.WriteLine();
 }
-
-void PrintAverageArrayColumns(double[] columnsSum, int rowCount)
-{
-    Console.Write("Среднее арифметическое каждого столбца: ");
-    string separator = "; ";
-    for (int i = 0; i < columnsSum.Length; i++)
-    {
-        if (i == columnsSum.Length - 1)
-            separator = ".";
-        double sumAverage = Math.Round((float)columnsSum[i] / rowCount, 3);
-        Console.Write(sumAverage + separator);
-    }
-    Console.WriteLine();
-}
-
 
 while (fillParamsArray(paramsArray))
 {
     int[,] array = new int[paramsArray[0], paramsArray[1]];
     FillRandomIntArray(array);
     PrintArray(array);
-    double[] columnsSum = GetSumColumnArray(array);
-    PrintAverageArrayColumns(columnsSum, paramsArray[0]);
+    PrintAverageArrayColumns(array);
 };
